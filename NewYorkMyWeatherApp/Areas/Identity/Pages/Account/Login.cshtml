@@ -1,45 +1,48 @@
 ﻿@page
 @model LoginModel
-
-  <div class="col-md-4">
-    <section class="d-flex align-items-center position-relative vh-100 cover hero">
-      <form id="account" method="post">
-        <h4>Use a local account to log in.</h4>
-        <hr />
-        <div asp-validation-summary="All" class="text-danger"></div>
-        <div class="form-group">
-          <label asp-for="Input.Email"></label>
-          <input asp-for="Input.Email" class="form-control" />
-          <span asp-validation-for="Input.Email" class="text-danger"></span>
-        </div>
-        <div class="form-group">
-          <label asp-for="Input.Password"></label>
-          <input asp-for="Input.Password" class="form-control" />
-          <span asp-validation-for="Input.Password" class="text-danger"></span>
-        </div>
-        <div class="form-group">
-          <div class="checkbox">
-            <label asp-for="Input.RememberMe">
-              <input asp-for="Input.RememberMe" />
-              @Html.DisplayNameFor(m => m.Input.RememberMe)
-            </label>
+<section id="login" class="d-flex align-items-center position-relative vh-100 cover hero">
+  <div class="container-fluid container-fluid-max">
+    <div class="row">
+      <div class="col-12 col-md-10 col-lg-8 col-xl-5">
+        <form id="account" method="post" class="text-white">
+          <h4>Login with existing account.</h4>
+          <hr />
+          <div asp-validation-summary="All" class="text-white"></div>
+          <div class="form-group">
+            <label asp-for="Input.Email"></label>
+            <input class="form-control" asp-for="Input.Email" />
+            <span asp-validation-for="Input.Email" class="text-white"></span>
           </div>
-        </div>
-        <div class="form-group">
-          <button type="submit" class="btn btn-primary">Log in</button>
-        </div>
-        <div class="form-group">
-          <p>
-            <a id="forgot-password" asp-page="./ForgotPassword">Forgot your password?</a>
-          </p>
-          <p>
-            <a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">Register as a new user</a>
-          </p>
-        </div>
-      </form>
-    </section>
+          <div class="login-register-wrap-input">
+            <label asp-for="Input.Password"></label>
+            <input class="form-control" asp-for="Input.Password" />
+            <span asp-validation-for="Input.Password" class="text-white"></span>
+          </div>
+          <div class="form-group">
+            <div class="checkbox">
+              <label asp-for="Input.RememberMe">
+                <input asp-for="Input.RememberMe" />
+                @Html.DisplayNameFor(m => m.Input.RememberMe)
+              </label>
+            </div>
+          </div>
+          <div class="form-group">
+            <button type="submit" class="btn btn-dark w-100">Log in</button>
+          </div>
+          <div class="form-group">
+            <p>
+              <a id="forgot-password" asp-page="./ForgotPassword">Forgot your password?</a>
+            </p>
+            <p>
+              <a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">Register as a new user</a>
+            </p>
+          </div>
+        </form>
+      </div>
+    </div>
   </div>
+</section>
 
-  @section Scripts {
-    <partial name="_ValidationScriptsPartial" />
-  }
+@section Scripts {
+  <partial name="_ValidationScriptsPartial" />
+}

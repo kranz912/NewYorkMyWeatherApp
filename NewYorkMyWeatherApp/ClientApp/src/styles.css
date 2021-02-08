@@ -2,7 +2,7 @@
 
 /* Provide sufficient contrast against white background */
 a {
-  color: #0366d6;
+  color: white;
 }
 
 body {
@@ -12,6 +12,7 @@ body {
   -o-background-size: cover;
   background-size: cover;
 }
+
 .bg-grey {
   background: #484848;
 }
