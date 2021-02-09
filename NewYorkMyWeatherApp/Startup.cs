@@ -13,6 +13,7 @@ using Microsoft.Extensions.Hosting;
 using NewYorkMyWeatherApp.Data;
 using NewYorkMyWeatherApp.Models;
 using NewYorkMyWeatherApp.Services;
+using System.Security.Cryptography.X509Certificates;
 
 namespace NewYorkMyWeatherApp
 {
@@ -52,6 +53,7 @@ namespace NewYorkMyWeatherApp
       services.AddTransient<IEmailSender, EmailSenderService>();
       services.Configure<AuthMessageSenderOptions>(Configuration);
 
+
     }
 
     // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -88,6 +90,7 @@ namespace NewYorkMyWeatherApp
                   pattern: "{controller}/{action=Index}/{id?}");
         endpoints.MapRazorPages();
       });
+
       app.UseSpa(spa =>
       {
         // To learn more about options for serving an Angular SPA from ASP.NET Core,
