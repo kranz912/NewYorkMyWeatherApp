@@ -25,6 +25,7 @@ Default username: me@kranznikolai.com
 Default password: s2mqkRmms9923n!#
 
 ## Project Structure
+```
 NewYorkMyWeatherApp
 └── screens
     └── Services \\contains external services such as weather and sendgrid services
@@ -35,7 +36,7 @@ NewYorkMyWeatherApp
               └── api-authorization \\ contains angular authentication handler
               └── assets \\ contains web assets such as images
               └── app \\ contains components for client application
-
+```
 
 
 ## Authentication Requirements
