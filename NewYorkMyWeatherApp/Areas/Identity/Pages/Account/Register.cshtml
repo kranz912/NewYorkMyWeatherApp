@@ -1,35 +1,42 @@
 ﻿@page
 @model RegisterModel
-  <section id="register" class="d-flex align-items-center position-relative vh-100 cover hero">
-    <div class="container-fluid container-fluid-max">
-      <div class="row">
-        <div class="col-12 col-md-10 col-lg-8 col-xl-5">
-          <form asp-route-returnUrl="@Model.ReturnUrl" method="post" class="text-white">
-            <h4>Create a new account.</h4>
-            <hr />
-            <div asp-validation-summary="All" class="text-danger"></div>
-            <div class="form-group">
-              <label asp-for="Input.Email"></label>
-              <input asp-for="Input.Email" class="form-control" />
-              <span asp-validation-for="Input.Email" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-              <label asp-for="Input.Password"></label>
-              <input asp-for="Input.Password" class="form-control" />
-              <span asp-validation-for="Input.Password" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-              <label asp-for="Input.ConfirmPassword"></label>
-              <input asp-for="Input.ConfirmPassword" class="form-control" />
-              <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
-            </div>
-            <button type="submit" class="btn btn-primary">Register</button>
-          </form>
-        </div>
+<section id="register" class="d-flex align-items-center position-relative vh-100 cover hero">
+  <div class="container-fluid container-fluid-max">
+    <div class="row">
+      <div class="col-12 col-md-10 col-lg-8 col-xl-5">
+        <form asp-route-returnUrl="@Model.ReturnUrl" method="post" class="text-white">
+          <h4>Create a new account.</h4>
+          <hr />
+          <div asp-validation-summary="All" class="text-white"></div>
+          <div class="form-group">
+            <label asp-for="Input.Email"></label>
+            <input asp-for="Input.Email" class="form-control" />
+            <span asp-validation-for="Input.Email" class="text-white"></span>
+          </div>
+          <div class="form-group">
+            <label asp-for="Input.Password"></label>
+            <input asp-for="Input.Password" class="form-control" />
+            <span asp-validation-for="Input.Password" class="text-white"></span>
+          </div>
+          <div class="form-group">
+            <label asp-for="Input.ConfirmPassword"></label>
+            <input asp-for="Input.ConfirmPassword" class="form-control" />
+            <span asp-validation-for="Input.ConfirmPassword" class="text-white"></span>
+          </div>
+          <div class="form-group">
+            <button type="submit" class="btn btn-dark w-100">Register</button>
+          </div>
+          <div class="form-group">
+            <p>
+              <a href="/">Return to home</a>
+            </p>
+          </div>
+        </form>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  @section Scripts {
-    <partial name="_ValidationScriptsPartial" />
-  }
+@section Scripts {
+  <partial name="_ValidationScriptsPartial" />
+}

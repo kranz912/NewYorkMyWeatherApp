@@ -14,8 +14,10 @@
     <a class="nav-link text-dark" [routerLink]='["/authentication/login"]'>Login</a>
   </li>
 </ul>-->
-
-<div class="mt-3">
+<div  *ngIf="(isAuthenticated | async)">
+  <h1>Welcome!!</h1>
+</div>
+<div class="mt-3"  *ngIf="!(isAuthenticated | async)">
   <a class="btn bg-dark text-white mr-2" [routerLink]='["/authentication/login"]' role="button">Login</a>
   <a class="btn btn-outline-dark text-white" [routerLink]='["/authentication/register"]' role="button">Register</a>
 </div>

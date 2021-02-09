@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI;
+using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.SpaServices.AngularCli;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -11,6 +12,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using NewYorkMyWeatherApp.Data;
 using NewYorkMyWeatherApp.Models;
+using NewYorkMyWeatherApp.Services;
 
 namespace NewYorkMyWeatherApp
 {
@@ -45,7 +47,10 @@ namespace NewYorkMyWeatherApp
       {
         configuration.RootPath = "ClientApp/dist";
       });
+      
       services.AddControllersWithViews().AddRazorRuntimeCompilation();
+      services.AddTransient<IEmailSender, EmailSenderService>();
+      services.Configure<AuthMessageSenderOptions>(Configuration);
 
     }
 

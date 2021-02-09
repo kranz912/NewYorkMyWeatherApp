@@ -1,11 +1,12 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using NewYorkMyWeatherApp.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-
+using NewYorkMyWeatherApp.Services;
 namespace NewYorkMyWeatherApp.Controllers
 {
   [Authorize]
@@ -26,16 +27,20 @@ namespace NewYorkMyWeatherApp.Controllers
     }
 
     [HttpGet]
-    public IEnumerable<WeatherForecast> Get()
+    public async Task<IActionResult> Get()
     {
-      var rng = new Random();
-      return Enumerable.Range(1, 5).Select(index => new WeatherForecast
+      try
       {
-        Date = DateTime.Now.AddDays(index),
-        TemperatureC = rng.Next(-20, 55),
-        Summary = Summaries[rng.Next(Summaries.Length)]
-      })
-      .ToArray();
+        WeatherGovAPIService weatherGovAPIService = new WeatherGovAPIService();
+
+        return Ok(await weatherGovAPIService.GetWeatherPeriod());
+      }
+      catch(Exception ex)
+      {
+        _logger.LogError(ex.Message);
+        return BadRequest();
+      }
+
     }
   }
 }
