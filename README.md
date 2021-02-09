@@ -1,4 +1,10 @@
 # NewYorkMyWeatherApp
+
+## Prerequisites
+1. .Net5
+2. SendGrid Api Keys
+3. AngularCLI
+
 ## Installation
 
 Run on Visual Studio Package Manager
