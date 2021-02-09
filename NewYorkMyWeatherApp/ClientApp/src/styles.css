@@ -4,7 +4,9 @@
 a {
   color: white;
 }
-
+.center-text {
+  vertical-align: middle;
+}
 body {
   background: url("assets/background-img.jpg") no-repeat center center fixed;
   -webkit-background-size: cover;

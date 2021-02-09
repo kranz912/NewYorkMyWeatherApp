@@ -10,6 +10,7 @@ import { Forecast, ForecastService } from '../forecast.service';
 })
 export class ForecastComponent implements OnInit {
   public periods: Observable<Array<any>>;
+  public periodNumber: number;
   constructor(private forecastService: ForecastService ) { }
 
   ngOnInit(): void {
@@ -17,7 +18,22 @@ export class ForecastComponent implements OnInit {
       console.log(p);
       return p.properties.periods
     }));
-    console.log(this.periods);
+    this.periodNumber = 3;
+  }
+  refereshPeriodNumber(number, $event) {
+    let clickedElement = $event.target || $event.srcElement;
+
+    if (clickedElement.nodeName === "BUTTON") {
+
+      let isCertainButtonAlreadyActive = clickedElement.parentElement.querySelector(".active");
+
+      if (isCertainButtonAlreadyActive) {
+        isCertainButtonAlreadyActive.classList.remove("active");
+      }
+
+      clickedElement.className += " active";
+    }
+    this.periodNumber = number;
   }
 
 }

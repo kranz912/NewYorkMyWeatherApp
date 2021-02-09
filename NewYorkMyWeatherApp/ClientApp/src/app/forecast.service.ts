@@ -25,7 +25,7 @@ export interface Forecast{
 interface Properties {
   periods: Array<Period>
 }
-interface Period {
+export interface Period {
   number: number;
   name: string;
   startTime: string;
@@ -35,4 +35,6 @@ interface Period {
   temperatureUnit: string;
   windSpeed: string;
   windDirection: string;
+  shortForecast: string;
+  icon: string;
 }

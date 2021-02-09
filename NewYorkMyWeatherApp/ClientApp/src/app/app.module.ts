@@ -13,6 +13,9 @@ import { ApiAuthorizationModule } from 'src/api-authorization/api-authorization.
 import { AuthorizeGuard } from 'src/api-authorization/authorize.guard';
 import { AuthorizeInterceptor } from 'src/api-authorization/authorize.interceptor';
 import { ForecastComponent } from './forecast/forecast.component';
+import { PeriodComponent } from './period/period.component';
+import { FilterPipe } from './filter.pipe';
+import { PeriodFilterPipe } from './period-filter.pipe';
 
 @NgModule({
   declarations: [
@@ -21,7 +24,10 @@ import { ForecastComponent } from './forecast/forecast.component';
     HomeComponent,
     CounterComponent,
     FetchDataComponent,
-    ForecastComponent
+    ForecastComponent,
+    PeriodComponent,
+    FilterPipe,
+    PeriodFilterPipe
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
