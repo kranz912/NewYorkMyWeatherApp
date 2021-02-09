@@ -85,7 +85,7 @@ namespace NewYorkMyWeatherApp.Areas.Identity.Pages.Account
         if (result.Succeeded)
         {
           _logger.LogInformation("User logged in.");
-          return LocalRedirect(Url.Content("~/"));
+          return LocalRedirect(Url.Content("~/forecast"));
         }
         if (result.RequiresTwoFactor)
         {

@@ -16,7 +16,5 @@ namespace NewYorkMyWeatherApp.Models
     public string TemperatureUnit { get; set; }
     public string WindSpeed { get; set; }
     public string WindDirection { get; set; }
-
-
   }
 }
