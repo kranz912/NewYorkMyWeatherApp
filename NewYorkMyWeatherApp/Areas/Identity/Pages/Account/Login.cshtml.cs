@@ -97,10 +97,13 @@ namespace NewYorkMyWeatherApp.Areas.Identity.Pages.Account
           return RedirectToPage("./Lockout");
         }
         var user = _userManager.FindByEmailAsync(Input.Email);
-        if (!user.Result.EmailConfirmed)
+        if(user.Result != null)
         {
-          ModelState.AddModelError(string.Empty, "Please confirm your email address ");
-          return Page();
+          if (!user.Result.EmailConfirmed)
+          {
+            ModelState.AddModelError(string.Empty, "Please confirm your email address ");
+            return Page();
+          }
         }
         else
         {

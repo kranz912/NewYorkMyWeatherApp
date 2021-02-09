@@ -3,22 +3,31 @@
   <div class="p-4">
     <div class="d-flex flex-column currentWeather mt-5 mb-3">
 
-      <app-period *ngFor="let period of periods | async | periodFilter: periodNumber" [temperature]="period.temperature" [unit]="period.temperatureUnit" [shortforecast]="period.shortForecast" [name]="period.name" [windspeed]="period.windSpeed" [winddirection]="period.windDirection"></app-period>
+      <app-period
+                  *ngFor="let period of periods | async | periodFilter: periodNumber"
+                  [temperature]="period.temperature"
+                  [unit]="period.temperatureUnit"
+                  [shortforecast]="period.shortForecast"
+                  [name]="period.name"
+                  [windspeed]="period.windSpeed"
+                  [winddirection]="period.windDirection">
+
+      </app-period>
 
       <div class="row">
         <div class="col-sm-12">
           <div class="btn-group flex-wrap">
-            <button class="btn btn-dark" *ngFor="let period of periods | async" (click)="refereshPeriodNumber(period.number,$event)" [class.active]="period.number==3">{{period.name}}</button>
+            <button
+                    class="btn btn-dark"
+                    *ngFor="let period of periods | async"
+                    (click)="refereshPeriodNumber(period.number,$event)"
+                    [class.active]="period.number==3">{{period.name}}
+            </button>
           </div>
         </div>
 
       </div>
     </div>
   </div>
-  <div class="align-items-center">
-    <a href="#" class="text-center">Logout</a>
-  </div>
-
-
 </div>
 
