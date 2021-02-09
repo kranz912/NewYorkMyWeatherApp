@@ -24,5 +24,8 @@ dotnet user-secrets set SendGridKey <sendgridkey>--project .\NewYorkMyWeatherApp
 Default username: me@kranznikolai.com
 Default password: s2mqkRmms9923n!#
 
-
+## Authentication Requirements
+1. User must be registered
+2. User must have valid and confirmed email addres
+3. User must have proper credentials
 
