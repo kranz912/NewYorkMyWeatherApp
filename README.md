@@ -29,3 +29,10 @@ Default password: s2mqkRmms9923n!#
 2. User must have valid and confirmed email addres
 3. User must have proper credentials
 
+## Screenshots
+### Login page
+![alt text](https://github.com/kranz912/NewYorkMyWeatherApp/blob/master/loginpage.PNG)
+### Main page
+![alt text](https://github.com/kranz912/NewYorkMyWeatherApp/blob/master/mainpage.PNG)
+### Registration
+![alt_text](https://github.com/kranz912/NewYorkMyWeatherApp/blob/master/registrationpage.PNG)
